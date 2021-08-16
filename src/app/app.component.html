@@ -1,0 +1,17 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <hr>
+      <app-movie *ngFor="let movie of movies; let i = index"
+       [movie] ="movie" 
+       [id]="i" 
+       (movieChanged)="onMovieChanged($event)">
+      </app-movie>
+
+      <hr>
+
+      <app-movie-form></app-movie-form>
+    </div>
+  </div>
+</div>

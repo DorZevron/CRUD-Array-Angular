@@ -1,0 +1,19 @@
+<div class="movie" *ngIf="movie">
+
+    <div class="movie-info" *ngIf="!updateMode;else updateModeContainer">
+        <div>Id: {{movie.id}}</div>
+        <div>Title: {{movie.title}}</div>
+        <div>Summary: {{movie.summary}}</div>
+        <div>Publish date: {{movie.publishedDate}}</div>
+        <div>Image: {{movie.image}}</div>
+    
+        <label (click)="onMovieDeleted()">🗑</label>
+        <label (click)="setUpdateMode(true)">✏️</label>
+    </div>
+    
+    
+    <ng-template #updateModeContainer>
+        <app-movie-form [movie]="movie"></app-movie-form>
+    </ng-template>
+
+</div>
