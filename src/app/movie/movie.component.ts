@@ -16,24 +16,25 @@ export class MovieComponent implements OnInit {
 
   updateMode: boolean = false;
   
-  profileFormUpdate = this.fb.group({
-    title: ['', Validators.required],
-    summary: ['', Validators.required],
-    publishedDate: ['', Validators.required],
-    image: ['', Validators.required]
-  })
+//   profileFormUpdate = this.fb.group({
+//     title: ['', Validators.required],
+//     summary: ['', Validators.required],
+//     publishedDate: ['', Validators.required],
+//     image: ['', Validators.required]
+//   })
 
+  constructor(private moviesServices: MoviesService) { }
 
-  constructor(private moviesService: MoviesService, private fb: FormBuilder) {
-   }
+  //   constructor(private moviesService: MoviesService, private fb: FormBuilder) {
+//    }
 
   ngOnInit(): void {
   }
 
-  onSetTo( title: string, summary: string, publishedDate: string, image: string) {
-    this.moviesService.updateMovie(this.movie.id, this.movie)
+//   onSetTo( title: string, summary: string, publishedDate: string, image: string) {
+//     this.moviesService.updateMovie(this.movie.id, this.movie)
     // this.loggingService.logStatusChange(status);
-  }
+//   }
 
   onMovieDeleted() {
     this.moviesService.deleteMovie(this.movie);
